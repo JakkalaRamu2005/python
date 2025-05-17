@@ -1,0 +1,65 @@
+# Code Here
+class Student:
+    def __init__(self,student_id,name,age,major):
+        self.__student_id = student_id
+        self.__name = name 
+        self.__age = age 
+        self.__major = major
+        self.__gpa =0 
+    def get_student(self):
+        return self.__student_id
+    def set_student_id(self,student_id):
+        self.__student_id = student_id
+    def get_name(self):
+        return self.__name 
+    def set_name(self,name):
+        self.__name = name 
+    def get_age(self):
+        return self.__age 
+    def set_age(self,age):
+        self.__age = age 
+    def get_major(self):
+        return self.__major
+    def set_major(self,major):
+        self.__major = major 
+    def get_gpa(self):
+        return self.__gpa
+    def set_gpa(self,gpa):
+        if gpa>0 and gpa<=4:
+            self.__gpa = gpa 
+        else:
+            print("Invalid GPA")
+    def is_eligible_for_graduation(self):
+        return self.__gpa>=2.0 
+class Undergraduate(Student):
+    def __init__(self,student_id,name,age,major,year):
+        super().__init__(student_id,name,age,major)
+        self.__year = year 
+    def get_year(self):
+        return self.__year
+    def set_year(self,year):
+        self.__year = year 
+class Graduate(Student):
+    def __init__(self,student_id,name,age,major,gpa,thesis_topic):
+        super().__init__(student_id,name,age,major,gpa)
+        self.__thesis_topic = thesis_topic
+    def get_thesis_topic(self):
+        return self.__thesis_topic
+    def set_thesis_topic(self,thesis_topic):
+        self.__thesis_topic = thesis_topic
+class Postgraduate(Student):
+    def __init__(self,student_id,name,age,major,gpa,research_area,supervisor):
+        super().__init__(student_id,name,age,major,gpa)
+        self.__research_area = research_area
+        self.__supervisor = supervisor
+    def get_reserach_area(self):
+        return self.__research_area
+    def set_reserach_area(self,research_area):
+        self.__research_area = research_area
+    def get_supervisor(self):
+        return  self.__supervisor
+    def set_supervisor(self,supervisor):
+        self.__supervisor = supervisor
+    
+    
+    
